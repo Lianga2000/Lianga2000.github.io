@@ -1,109 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liane Galanti</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
-            line-height: 1.6;
-        }
-        header {
-            text-align: center;
-            padding: 2rem 1rem;
-            background-color: #0078D7;
-            color: white;
-        }
-        header h1 {
-            margin: 0;
-            font-size: 2rem;
-        }
-        header p {
-            margin: 0.5rem 0 1rem;
-            font-size: 1.2rem;
-        }
-        .links {
-            margin-top: 1rem;
-        }
-        .links a {
-            margin: 0 1rem;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .links a:hover {
-            text-decoration: underline;
-        }
-        main {
-            padding: 2rem 1rem;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        h2 {
-            margin-top: 2rem;
-            text-align: center;
-        }
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        ul li {
-            margin-bottom: 1rem;
-        }
-        ul li a {
-            color: #0078D7;
-            text-decoration: none;
-        }
-        ul li a:hover {
-            text-decoration: underline;
-        }
-        footer {
-            text-align: center;
-            padding: 1rem;
-            background-color: #333;
-            color: white;
-            margin-top: 2rem;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="description" content="My simple personal website" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Simple Website</title>
+  <style>
+    /* Basic reset & simple styling */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #fafafa;
+    }
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+    main {
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .bio {
+      margin-bottom: 1.5rem;
+    }
+    .links a {
+      margin-right: 1rem;
+      color: #003366;
+      text-decoration: none;
+    }
+    .links a:hover {
+      text-decoration: underline;
+    }
+    .publications {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .publication-item {
+      margin-bottom: 1rem;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #777;
+      margin-top: 3rem;
+      padding-bottom: 1rem;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Liane Galanti</h1>
-        <p>Researcher | Computer Scientist</p>
-        <div class="links">
-            <a href="https://github.com/your-username" target="_blank">GitHub</a>
-            <a href="https://linkedin.com/in/your-username" target="_blank">LinkedIn</a>
-            <a href="mailto:your-email@example.com">Email</a>
-            <a href="cv.pdf" target="_blank">CV</a>
-        </div>
-    </header>
-    <main>
-        <h2>Publications</h2>
-        <ul>
-            <li>
-                <strong>Title of Paper 1</strong><br>
-                Authors: Liane Galanti, Co-Author Name<br>
-                <a href="https://arxiv.org/abs/12345678" target="_blank">View Paper</a>
-            </li>
-            <li>
-                <strong>Title of Paper 2</strong><br>
-                Authors: Liane Galanti, Co-Author Name<br>
-                <a href="https://arxiv.org/abs/87654321" target="_blank">View Paper</a>
-            </li>
-            <li>
-                <strong>Title of Paper 3</strong><br>
-                Authors: Liane Galanti, Co-Author Name<br>
-                <a href="https://arxiv.org/abs/11223344" target="_blank">View Paper</a>
-            </li>
-        </ul>
-    </main>
-    <footer>
-        &copy; 2024 Liane Galanti
-    </footer>
+  <header>
+    <h1>Your Name</h1>
+    <p>Your short bio or tagline goes here.</p>
+  </header>
+
+  <main>
+    <!-- Bio and Links Section -->
+    <section class="bio">
+      <h2>About Me</h2>
+      <p>
+        Write a short paragraph about who you are, your interests, and/or your professional background. 
+        Keep it concise and friendly!
+      </p>
+      <div class="links">
+        <a href="https://github.com/YourGitHubUsername" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/in/YourLinkedInProfile" target="_blank">LinkedIn</a>
+        <a href="mailto:your.email@example.com">Email</a>
+        <a href="path/to/your-cv.pdf" target="_blank">CV</a>
+      </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section class="publications">
+      <h2>Publications</h2>
+      
+      <!-- Add each publication as a list item or a styled div -->
+      <div class="publication-item">
+        <strong>Article Title 1</strong> (Year). <em>Journal/Conference Name</em>.
+        [<a href="https://linktoyourpaper1.com" target="_blank">View</a>]
+      </div>
+
+      <div class="publication-item">
+        <strong>Article Title 2</strong> (Year). <em>Journal/Conference Name</em>.
+        [<a href="https://linktoyourpaper2.com" target="_blank">View</a>]
+      </div>
+
+      <div class="publication-item">
+        <strong>Article Title 3</strong> (Year). <em>Journal/Conference Name</em>.
+        [<a href="https://linktoyourpaper3.com" target="_blank">View</a>]
+      </div>
+      <!-- Add more as needed -->
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Your Name. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Update footer with current year
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
