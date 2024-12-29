@@ -1,100 +1,168 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="description" content="A simple personal website" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name</title>
-  <style>
-    /* Minimal styling */
-    body {
-      margin: 2rem;
-      font-family: sans-serif;
-      color: #333;
-      background-color: #fff;
-      line-height: 1.6;
-    }
-    .container {
-      max-width: 600px;
-      margin: 0 auto;
-    }
-    h1, h2, h3, p, ul, li, a {
-      margin: 0;
-      padding: 0;
-    }
-    h1 {
-      margin-bottom: 1rem;
-    }
-    .bio {
-      margin-bottom: 1.5rem;
-    }
-    .links {
-      margin-bottom: 2rem;
-    }
-    .links a {
-      color: #333;
-      text-decoration: none;
-      margin-right: 1rem;
-    }
-    .links a:hover {
-      text-decoration: underline;
-    }
-    hr {
-      margin: 2rem 0;
-      border: none;
-      border-top: 1px solid #ccc;
-    }
-    footer {
-      margin-top: 4rem;
-      font-size: 0.8rem;
-      color: #aaa;
-      text-align: center;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <!-- Name and Bio -->
-    <h1>Your Name</h1>
-    <p class="bio">
-      A short bio about who you are, what you do, or any fun fact. Keep it concise!
-    </p>
-    
-    <!-- Links (GitHub, LinkedIn, Email, CV) -->
-    <div class="links">
-      <a href="mailto:you@example.com">Email</a>
-      <a href="https://github.com/YourGitHubUsername" target="_blank">GitHub</a>
-      <a href="https://linkedin.com/in/YourLinkedInProfile" target="_blank">LinkedIn</a>
-      <a href="path/to/your-cv.pdf" target="_blank">CV</a>
-    </div>
-    
-    <hr />
-
-    <!-- Publications Section -->
-    <h2>Publications</h2>
-    <ul>
-      <li>
-        <strong>Paper Title 1</strong> (Year). <em>Journal/Conference Name</em>. 
-        [<a href="https://link-to-publication-1" target="_blank">Link</a>]
-      </li>
-      <li>
-        <strong>Paper Title 2</strong> (Year). <em>Journal/Conference Name</em>.
-        [<a href="https://link-to-publication-2" target="_blank">Link</a>]
-      </li>
-      <li>
-        <strong>Paper Title 3</strong> (Year). <em>Journal/Conference Name</em>.
-        [<a href="https://link-to-publication-3" target="_blank">Link</a>]
-      </li>
-    </ul>
-    
-    <footer>
-      &copy; <span id="year"></span> Your Name  
-    </footer>
-  </div>
-
+  <meta charset="UTF-8">
+  <!-- Optional: Google Analytics snippet; remove if you don't need analytics -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-XXXXXXX-1"></script>
   <script>
-    // Update the year automatically
-    document.getElementById('year').textContent = new Date().getFullYear();
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-XXXXXXX-1');
   </script>
+  -->
+
+  <title>Your Name</title>
+  <meta name="author" content="Your Name">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Link to your stylesheet (put the stylesheet code in 'stylesheet.css') -->
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+
+  <!-- Example Favicon -->
+  <!-- <link rel="icon" type="image/png" href="images/my_favicon.png"> -->
+</head>
+
+<body>
+  <!-- Main Table Container -->
+  <table style="width:100%; max-width:800px; margin:0 auto; border-spacing:0px; border-collapse:separate;">
+    <tr>
+      <td>
+        
+        <!-- Header/Intro Table -->
+        <table style="width:100%; border-spacing:0px; border-collapse:separate;">
+          <tr>
+            <!-- Left/Bio Column -->
+            <td style="padding:2.5%; width:60%; vertical-align:middle;">
+              <p style="text-align:center;">
+                <name>Your Name</name>
+              </p>
+              
+              <!-- Brief text about yourself -->
+              <p>
+                I am [Your Position/Role] at [Your Institution or Company].  
+                Previously, I did [XYZ], and my research/interests are in [ABC].  
+              </p>
+
+              <p>
+                My research/interests revolve around [Areas of Focus].  
+                In particular, I'm interested in [Topic], [Topic], and [Topic].
+              </p>
+
+              <p>
+                <strong>If you’re looking for students/collaborators, mention it here!</strong>
+              </p>
+
+              <!-- Links (email, CV, GitHub, LinkedIn, Scholar, etc.) -->
+              <p style="text-align:center;">
+                <a href="mailto:youremail@example.com">Email</a> &nbsp; / &nbsp;
+                <a href="path/to/cv.pdf" target="_blank">CV</a> &nbsp; / &nbsp;
+                <a href="https://github.com/YourGitHubUsername" target="_blank">Github</a> &nbsp; / &nbsp;
+                <a href="https://www.linkedin.com/in/YourLinkedInProfile" target="_blank">LinkedIn</a> &nbsp; / &nbsp;
+                <a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+                <!-- Add or remove links as you wish -->
+              </p>
+            </td>
+
+            <!-- Right/Profile Image Column -->
+            <td style="padding:2.5%; width:40%; max-width:40%; vertical-align:middle;">
+              <!-- Replace src with your own profile image -->
+              <img src="images/myphoto.png" style="width:70%; border-radius:50%;" alt="Profile Photo">
+            </td>
+          </tr>
+        </table>
+
+        <!-- Publications / Research Section -->
+        <table style="width:100%; border-spacing:0px; border-collapse:separate;" cellpadding="24">
+          <tr>
+            <td>
+              <heading>Publications</heading>
+            </td>
+          </tr>
+        </table>
+
+        <!-- Another nested table for listing publications -->
+        <table style="width:100%; border-spacing:0px; border-collapse:separate;">
+          <!-- Example publication row -->
+          <tr>
+            <td style="padding:2.5%; width:25%; vertical-align:middle;">
+              <!-- Optional image or GIF for each publication -->
+              <img src="images/publication_1.png" width="180" alt="paper1">
+            </td>
+            <td style="padding:0; width:75%; max-width:75%; vertical-align:middle;">
+              <a href="https://arxiv.org/abs/xxxx.xxxxx" target="_blank">
+                <papertitle>Paper Title 1</papertitle>
+              </a>
+              <br>
+              <strong>Your Name</strong>, et al.
+              <br>
+              <em>Conference/Journal, Year.</em>
+              <br>
+              <a href="https://arxiv.org/abs/xxxx.xxxxx" target="_blank">arXiv</a> /
+              <a href="https://github.com/your_repo" target="_blank">code</a> /
+              <a href="https://your-project-page.com" target="_blank">project page</a>
+              
+              <p>
+                Short description of this publication. E.g., “We propose a method for ...”
+              </p>
+            </td>
+          </tr>
+
+          <!-- Add more publications as needed -->
+          <tr>
+            <td style="padding:2.5%; width:25%; vertical-align:middle;">
+              <img src="images/publication_2.png" width="180" alt="paper2">
+            </td>
+            <td style="padding:0; width:75%; max-width:75%; vertical-align:middle;">
+              <a href="#">
+                <papertitle>Paper Title 2</papertitle>
+              </a>
+              <br>
+              <strong>Your Name</strong>, et al.
+              <br>
+              <em>Conference/Journal, Year.</em>
+              <br>
+              <a href="#">arXiv</a> /
+              <a href="#">code</a> /
+              <a href="#">project page</a>
+              <p>
+                Another short publication blurb.
+              </p>
+            </td>
+          </tr>
+          <!-- ... and so on -->
+        </table>
+
+        <!-- Example "Talks" section -->
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
+          <tr>
+            <td>
+              <heading>Talks</heading>
+            </td>
+          </tr>
+        </table>
+
+        <table width="100%" align="center" border="0" cellpadding="20">
+          <tr>
+            <td width="100%" valign="center">
+              <a href="#"><em>Talk Title #1</em></a>, Conference or Institution, Year.  
+              <br><br>
+              <a href="#"><em>Talk Title #2</em></a>, Another venue, Year.
+              <br><br>
+              <!-- Add more talks or remove section entirely -->
+            </td>
+          </tr>
+        </table>
+
+        <!-- Footer / Credit -->
+        <p style="font-size: small; text-align: center;">
+          This page design is inspired by <a href="https://jonbarron.info/">Jon Barron</a> &amp; 
+          <a href="https://sagiebenaim.github.io/">Sagie Benaim</a>. 
+          Customize as you wish!
+        </p>
+      </td>
+    </tr>
+  </table>
 </body>
 </html>
