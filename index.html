@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liane Galanti - Research</title>
+    <title>Liane Galanti</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -11,40 +11,63 @@
             padding: 0;
             background-color: #f4f4f9;
             color: #333;
+            line-height: 1.6;
         }
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem 0;
             text-align: center;
+            padding: 2rem 1rem;
+            background-color: #0078D7;
+            color: white;
         }
-        nav {
-            margin: 0 auto;
-            padding: 1rem;
-            text-align: center;
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
         }
-        nav a {
+        header p {
+            margin: 0.5rem 0 1rem;
+            font-size: 1.2rem;
+        }
+        .links {
+            margin-top: 1rem;
+        }
+        .links a {
             margin: 0 1rem;
-            color: #333;
+            color: white;
             text-decoration: none;
             font-weight: bold;
         }
-        nav a:hover {
-            color: #0078D7;
+        .links a:hover {
+            text-decoration: underline;
         }
         main {
-            padding: 2rem;
+            padding: 2rem 1rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            margin-top: 2rem;
             text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        ul li {
+            margin-bottom: 1rem;
+        }
+        ul li a {
+            color: #0078D7;
+            text-decoration: none;
+        }
+        ul li a:hover {
+            text-decoration: underline;
         }
         footer {
-            background-color: #333;
-            color: #fff;
             text-align: center;
-            padding: 1rem 0;
+            padding: 1rem;
+            background-color: #333;
+            color: white;
             margin-top: 2rem;
-        }
-        section {
-            margin-bottom: 2rem;
         }
     </style>
 </head>
@@ -52,55 +75,35 @@
     <header>
         <h1>Liane Galanti</h1>
         <p>Researcher | Computer Scientist</p>
+        <div class="links">
+            <a href="https://github.com/your-username" target="_blank">GitHub</a>
+            <a href="https://linkedin.com/in/your-username" target="_blank">LinkedIn</a>
+            <a href="mailto:your-email@example.com">Email</a>
+            <a href="cv.pdf" target="_blank">CV</a>
+        </div>
     </header>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#publications">Publications</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
-    </nav>
     <main>
-        <section id="about">
-            <h2>About Me</h2>
-            <p>Hello! I'm Liane Galanti, a computer scientist passionate about learning and exploring cutting-edge research.</p>
-        </section>
-        <section id="publications">
-            <h2>Publications</h2>
-            <ul>
-                <li>
-                    <strong>Title of Paper 1</strong>  
-                    <br>Authors: Liane Galanti, Co-Author Name  
-                    <br><a href="https://arxiv.org/abs/12345678" target="_blank">View Paper</a>
-                </li>
-                <li>
-                    <strong>Title of Paper 2</strong>  
-                    <br>Authors: Liane Galanti, Co-Author Name  
-                    <br><a href="https://arxiv.org/abs/87654321" target="_blank">View Paper</a>
-                </li>
-                <li>
-                    <strong>Title of Paper 3</strong>  
-                    <br>Authors: Liane Galanti, Co-Author Name  
-                    <br><a href="https://arxiv.org/abs/11223344" target="_blank">View Paper</a>
-                </li>
-            </ul>
-        </section>
-        <section id="projects">
-            <h2>Projects</h2>
-            <p>Here are a few of my favorite projects:</p>
-            <ul>
-                <li><a href="https://github.com/your-username/project1" target="_blank">Project 1</a></li>
-                <li><a href="https://github.com/your-username/project2" target="_blank">Project 2</a></li>
-                <li><a href="https://github.com/your-username/project3" target="_blank">Project 3</a></li>
-            </ul>
-        </section>
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-            <p>GitHub: <a href="https://github.com/your-username" target="_blank">your-username</a></p>
-        </section>
+        <h2>Publications</h2>
+        <ul>
+            <li>
+                <strong>Title of Paper 1</strong><br>
+                Authors: Liane Galanti, Co-Author Name<br>
+                <a href="https://arxiv.org/abs/12345678" target="_blank">View Paper</a>
+            </li>
+            <li>
+                <strong>Title of Paper 2</strong><br>
+                Authors: Liane Galanti, Co-Author Name<br>
+                <a href="https://arxiv.org/abs/87654321" target="_blank">View Paper</a>
+            </li>
+            <li>
+                <strong>Title of Paper 3</strong><br>
+                Authors: Liane Galanti, Co-Author Name<br>
+                <a href="https://arxiv.org/abs/11223344" target="_blank">View Paper</a>
+            </li>
+        </ul>
     </main>
     <footer>
-        <p>&copy; 2024 Liane Galanti. All Rights Reserved.</p>
+        &copy; 2024 Liane Galanti
     </footer>
 </body>
 </html>
