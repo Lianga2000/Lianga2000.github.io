@@ -2,114 +2,98 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="description" content="My simple personal website" />
+  <meta name="description" content="A simple personal website" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Simple Website</title>
+  <title>Your Name</title>
   <style>
-    /* Basic reset & simple styling */
+    /* Minimal styling */
     body {
-      font-family: Arial, sans-serif;
+      margin: 2rem;
+      font-family: sans-serif;
+      color: #333;
+      background-color: #fff;
+      line-height: 1.6;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h1, h2, h3, p, ul, li, a {
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-      background: #fafafa;
     }
-    header {
-      background: #003366;
-      color: #fff;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2rem;
-      letter-spacing: 1px;
-    }
-    main {
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    h1 {
+      margin-bottom: 1rem;
     }
     .bio {
       margin-bottom: 1.5rem;
     }
+    .links {
+      margin-bottom: 2rem;
+    }
     .links a {
-      margin-right: 1rem;
-      color: #003366;
+      color: #333;
       text-decoration: none;
+      margin-right: 1rem;
     }
     .links a:hover {
       text-decoration: underline;
     }
-    .publications {
-      margin-top: 2rem;
-      padding: 1rem;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-    .publication-item {
-      margin-bottom: 1rem;
+    hr {
+      margin: 2rem 0;
+      border: none;
+      border-top: 1px solid #ccc;
     }
     footer {
-      text-align: center;
+      margin-top: 4rem;
       font-size: 0.8rem;
-      color: #777;
-      margin-top: 3rem;
-      padding-bottom: 1rem;
+      color: #aaa;
+      text-align: center;
     }
   </style>
 </head>
 <body>
-  <header>
+  <div class="container">
+    <!-- Name and Bio -->
     <h1>Your Name</h1>
-    <p>Your short bio or tagline goes here.</p>
-  </header>
-
-  <main>
-    <!-- Bio and Links Section -->
-    <section class="bio">
-      <h2>About Me</h2>
-      <p>
-        Write a short paragraph about who you are, your interests, and/or your professional background. 
-        Keep it concise and friendly!
-      </p>
-      <div class="links">
-        <a href="https://github.com/YourGitHubUsername" target="_blank">GitHub</a>
-        <a href="https://linkedin.com/in/YourLinkedInProfile" target="_blank">LinkedIn</a>
-        <a href="mailto:your.email@example.com">Email</a>
-        <a href="path/to/your-cv.pdf" target="_blank">CV</a>
-      </div>
-    </section>
+    <p class="bio">
+      A short bio about who you are, what you do, or any fun fact. Keep it concise!
+    </p>
+    
+    <!-- Links (GitHub, LinkedIn, Email, CV) -->
+    <div class="links">
+      <a href="mailto:you@example.com">Email</a>
+      <a href="https://github.com/YourGitHubUsername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/YourLinkedInProfile" target="_blank">LinkedIn</a>
+      <a href="path/to/your-cv.pdf" target="_blank">CV</a>
+    </div>
+    
+    <hr />
 
     <!-- Publications Section -->
-    <section class="publications">
-      <h2>Publications</h2>
-      
-      <!-- Add each publication as a list item or a styled div -->
-      <div class="publication-item">
-        <strong>Article Title 1</strong> (Year). <em>Journal/Conference Name</em>.
-        [<a href="https://linktoyourpaper1.com" target="_blank">View</a>]
-      </div>
-
-      <div class="publication-item">
-        <strong>Article Title 2</strong> (Year). <em>Journal/Conference Name</em>.
-        [<a href="https://linktoyourpaper2.com" target="_blank">View</a>]
-      </div>
-
-      <div class="publication-item">
-        <strong>Article Title 3</strong> (Year). <em>Journal/Conference Name</em>.
-        [<a href="https://linktoyourpaper3.com" target="_blank">View</a>]
-      </div>
-      <!-- Add more as needed -->
-    </section>
-  </main>
-
-  <footer>
-    © <span id="year"></span> Your Name. All Rights Reserved.
-  </footer>
+    <h2>Publications</h2>
+    <ul>
+      <li>
+        <strong>Paper Title 1</strong> (Year). <em>Journal/Conference Name</em>. 
+        [<a href="https://link-to-publication-1" target="_blank">Link</a>]
+      </li>
+      <li>
+        <strong>Paper Title 2</strong> (Year). <em>Journal/Conference Name</em>.
+        [<a href="https://link-to-publication-2" target="_blank">Link</a>]
+      </li>
+      <li>
+        <strong>Paper Title 3</strong> (Year). <em>Journal/Conference Name</em>.
+        [<a href="https://link-to-publication-3" target="_blank">Link</a>]
+      </li>
+    </ul>
+    
+    <footer>
+      &copy; <span id="year"></span> Your Name  
+    </footer>
+  </div>
 
   <script>
-    // Update footer with current year
+    // Update the year automatically
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
