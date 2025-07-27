@@ -204,7 +204,7 @@
       ctx.beginPath();
       for (let i = 0; i < points.length; i++) {
         const [px, py, pz] = points[i];
-        const xPos = map(px, -25, 25, 20, canvas.width - 20);  // add margin
+        const xPos = map(px, -25, 25, 20, canvas.width - 10);  // add margin
         const yPos = map(pz, 0, 60, canvas.height - 10, 10);   // add margin
 
         const hueShift = Date.now() * 0.02;  // changes with time
