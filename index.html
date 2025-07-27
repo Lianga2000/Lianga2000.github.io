@@ -181,7 +181,7 @@
     canvas.height = canvas.offsetHeight;
 
     let x = 0.01, y = 0, z = 0;
-    const dt = 0.001;
+    const dt = 0.01;
     const a = 10, b = 28, c = 8 / 3;
     const points = [];
 
@@ -190,7 +190,7 @@
     }
 
     function draw() {
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 3; i++) {
         let dx = a * (y - x) * dt;
         let dy = (x * (b - z) - y) * dt;
         let dz = (x * y - c * z) * dt;
