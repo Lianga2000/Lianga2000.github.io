@@ -72,6 +72,14 @@
       margin-top: 0.3em;
       font-size: 0.95em;
     }
+
+    #chaosCanvas {
+      width: 100%;
+      height: 120px;
+      display: block;
+      background: #fff;
+      margin: 2em 0;
+    }
   </style>
 </head>
 <body>
@@ -80,6 +88,8 @@
     I am a Research Scientist at IBM Research. I received my M.Sc. in Computer Science from Tel Aviv University, where I worked with Professor Lior Wolf.
     My research interests include universal representations, inductive biases, emergent capabilities of large models, adaptive learning, compressing neural networks, scaling laws, and data debiasing.
   </p>
+
+  <canvas id="chaosCanvas"></canvas>
 
   <div class="contact">
     <a href="mailto:lianegalanti@mail.tau.ac.il">Email</a>
@@ -140,5 +150,43 @@
     </div>
   </div>
 
+  <script>
+    const canvas = document.getElementById('chaosCanvas');
+    const ctx = canvas.getContext('2d');
+    let particles = [];
+
+    function resize() {
+      canvas.width = window.innerWidth;
+      canvas.height = 120;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    for (let i = 0; i < 100; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 1.5,
+        vy: (Math.random() - 0.5) * 1.5,
+        r: Math.random() * 2 + 1
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = 'rgba(0,0,0,0.7)';
+      for (const p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, 2 * Math.PI);
+        ctx.fill();
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+  </script>
 </body>
 </html>
