@@ -5,185 +5,140 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Liane Galanti">
   <title>Liane Galanti</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
-      margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #fafafa;
-      color: #222;
+      margin: 2em auto;
+      max-width: 760px;
+      color: #111;
+      background: #fff;
+      line-height: 1.6;
     }
 
-    header {
-      background-color: #111;
-      color: #fff;
-      padding: 3rem 2rem 2rem;
-      text-align: center;
+    h1 {
+      font-family: 'Source Serif Pro', serif;
+      font-size: 2.2em;
+      font-weight: normal;
+      margin-bottom: 0.2em;
     }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
+    .contact {
+      margin-bottom: 2em;
     }
 
-    header p {
-      font-size: 1.1rem;
-      margin-top: 0.5rem;
-    }
-
-    .profile-container {
-      display: flex;
-      flex-direction: column-reverse;
-      align-items: center;
-      gap: 2rem;
-      padding: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .profile-container img {
-      width: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .bio {
-      max-width: 700px;
-      text-align: center;
-    }
-
-    .bio p {
-      line-height: 1.7;
-    }
-
-    .links {
-      margin-top: 1rem;
-    }
-
-    .links a {
-      color: #0077cc;
+    .contact a {
+      color: #0645ad;
       text-decoration: none;
-      margin: 0 0.5rem;
+      margin-right: 1.2em;
     }
 
-    .section {
-      max-width: 1000px;
-      margin: 2rem auto;
-      padding: 0 2rem;
-    }
-
-    .section h2 {
-      font-size: 1.5rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 0.5rem;
+    .section-title {
+      margin-top: 2em;
+      margin-bottom: 1em;
+      font-size: 1.2em;
+      font-weight: bold;
     }
 
     .paper {
-      display: flex;
-      flex-direction: row;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5em;
     }
 
-    .paper img {
-      width: 160px;
-      height: auto;
-      border-radius: 8px;
+    .papertitle {
+      font-weight: bold;
     }
 
-    .paper-content {
-      flex: 1;
+    .authors {
+      font-size: 0.95em;
+      color: #444;
     }
 
-    .paper-content h3 {
-      margin: 0;
-      font-size: 1.1rem;
+    .venue {
+      font-style: italic;
+      font-size: 0.95em;
     }
 
-    .paper-content p {
-      margin: 0.5rem 0;
+    .links {
+      font-size: 0.9em;
     }
 
-    footer {
-      text-align: center;
-      padding: 2rem;
-      font-size: 0.9rem;
-      color: #777;
+    .links a {
+      margin-right: 0.8em;
+      color: #0645ad;
+      text-decoration: none;
     }
 
-    @media (max-width: 768px) {
-      .paper {
-        flex-direction: column;
-        align-items: center;
-      }
+    .abstract {
+      margin-top: 0.3em;
+      font-size: 0.95em;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Liane Galanti</h1>
-    <p>Research Scientist @ IBM | AI, Neural Networks, Learning Theory</p>
-  </header>
+  <h1>Liane Galanti</h1>
+  <p>
+    I am a Research Scientist at IBM Research. I received my M.Sc. in Computer Science from Tel Aviv University, where I worked with Professor Lior Wolf.
+    My research interests include universal representations, inductive biases, emergent capabilities of large models, adaptive learning, compressing neural networks, scaling laws, and data debiasing.
+  </p>
 
-  <section class="profile-container">
-    <div class="bio">
-      <p>Hello! I'm a Research Scientist at IBM Research. I received my M.Sc. in Computer Science from Tel Aviv University, where I worked with Professor Lior Wolf.</p>
-      <p>I'm interested in universal representations, inductive biases, emergent capabilities, adaptive learning, scaling laws, neural compression, and debiasing methods.</p>
-      <p><strong>Interested in collaborations? Reach out :) ✨</strong></p>
-      <div class="links">
-        <a href="mailto:lianegalanti@mail.tau.ac.il">Email</a>
-        <a href="https://github.com/Lianga2000" target="_blank">GitHub</a>
-        <a href="https://www.linkedin.com/in/liane-galanti-31879923a/" target="_blank">LinkedIn</a>
-        <a href="https://scholar.google.com/citations?user=8jDgDJIAAAAJ&hl=en" target="_blank">Scholar</a>
-      </div>
+  <div class="contact">
+    <a href="mailto:lianegalanti@mail.tau.ac.il">Email</a>
+    <a href="https://github.com/Lianga2000" target="_blank">GitHub</a>
+    <a href="https://www.linkedin.com/in/liane-galanti-31879923a/" target="_blank">LinkedIn</a>
+    <a href="https://scholar.google.com/citations?user=8jDgDJIAAAAJ&hl=en" target="_blank">Scholar</a>
+  </div>
+
+  <div class="section-title">Selected Publications</div>
+
+  <div class="paper">
+    <div class="papertitle">Norm-based Generalization Bounds for Sparse Neural Networks</div>
+    <div class="authors">Tomer Galanti, Mengjia Xu, <strong>Liane Galanti</strong>, Tomaso Poggio</div>
+    <div class="venue">NeurIPS 2023</div>
+    <div class="links">
+      <a href="https://neurips.cc/virtual/2023/poster/72432">paper</a>
+      <a href="https://github.com/Lianga2000/NormBasedBounds">code</a>
     </div>
-    <img src="images/Liane.png" alt="Liane Galanti">
-  </section>
-
-  <section class="section">
-    <h2>Selected Papers</h2>
-
-    <div class="paper">
-      <img src="images/pub1.png" alt="Publication 1">
-      <div class="paper-content">
-        <h3><a href="https://neurips.cc/virtual/2023/poster/72432" target="_blank">Norm-based Generalization Bounds for Sparse Neural Networks</a></h3>
-        <p><strong>NeurIPS 2023</strong> — Tomer Galanti, Mengjia Xu, <strong>Liane Galanti</strong>, Tomaso Poggio</p>
-        <p>We derived tight generalization bounds for sparse neural networks and showed how sparsity affects generalization, outperforming previous bounds empirically.</p>
-        <p><a href="https://neurips.cc/virtual/2023/poster/72432">Paper</a> | <a href="https://github.com/Lianga2000/NormBasedBounds">Code</a></p>
-      </div>
+    <div class="abstract">
+      We derive tight generalization bounds for sparse neural networks and show how sparsity influences generalization. Our empirical results outperform prior bounds in the literature.
     </div>
+  </div>
 
-    <div class="paper">
-      <img src="images/pub2.png" alt="Publication 2">
-      <div class="paper-content">
-        <h3><a href="https://openreview.net/pdf?id=162TqkUNPO" target="_blank">Comparative Generalization Bounds for Deep Neural Networks</a></h3>
-        <p><strong>TMLR 2023</strong> — Tomer Galanti, <strong>Liane Galanti</strong>, Ido Ben-Shaul</p>
-        <p>We introduced the notion of "effective depth" to explain propagation of Neural Collapse across layers, showing its independence from architecture depth.</p>
-        <p><a href="https://openreview.net/pdf?id=162TqkUNPO">Paper</a> | <a href="https://github.com/Lianga2000/IntermediateNC">Code</a></p>
-      </div>
+  <div class="paper">
+    <div class="papertitle">Comparative Generalization Bounds for Deep Neural Networks</div>
+    <div class="authors">Tomer Galanti, <strong>Liane Galanti</strong>, Ido Ben-Shaul</div>
+    <div class="venue">TMLR 2023</div>
+    <div class="links">
+      <a href="https://openreview.net/pdf?id=162TqkUNPO">paper</a>
+      <a href="https://github.com/Lianga2000/IntermediateNC">code</a>
     </div>
+    <div class="abstract">
+      We introduce "effective depth" to capture how neural collapse propagates backward in networks. We show that effective depth is unrelated to architectural depth and adapts to data complexity.
+    </div>
+  </div>
 
-    <div class="paper">
-      <img src="images/pub3.png" alt="Publication 3">
-      <div class="paper-content">
-        <h3><a href="https://arxiv.org/pdf/2407.18968" target="_blank">Intelligence Analysis of Language Models</a></h3>
-        <p><strong>Preprint 2024</strong> — <strong>Liane Galanti</strong>, Ethan Baron</p>
-        <p>We evaluated LLMs on ARC and highlighted their limitations in abstract reasoning beyond language through diverse prompt strategies.</p>
-        <p><a href="https://arxiv.org/pdf/2407.18968">Paper</a></p>
-      </div>
+  <div class="paper">
+    <div class="papertitle">Intelligence Analysis of Language Models</div>
+    <div class="authors"><strong>Liane Galanti</strong>, Ethan Baron</div>
+    <div class="venue">Preprint 2024</div>
+    <div class="links">
+      <a href="https://arxiv.org/pdf/2407.18968">paper</a>
     </div>
+    <div class="abstract">
+      We evaluate the ability of LLMs to perform abstract reasoning beyond language, using the ARC benchmark and diverse prompting strategies.
+    </div>
+  </div>
 
-    <div class="paper">
-      <img src="images/pub4.webp" alt="Publication 4">
-      <div class="paper-content">
-        <h3><a href="https://arxiv.org/abs/2409.01927" target="_blank">From Grounding to Planning: Benchmarking Bottlenecks in Web Agents with Mind2Web</a></h3>
-        <p><strong>Preprint 2024</strong> — Segev Shlomov, Ben Wiesel, Aviad Sela, Ido Levy, <strong>Liane Galanti</strong>, Roy Abitbol</p>
-        <p>We analyzed whether grounding or planning is more essential for natural language-driven web agents using the Mind2Web benchmark.</p>
-        <p><a href="https://arxiv.org/abs/2409.01927">Paper</a></p>
-      </div>
+  <div class="paper">
+    <div class="papertitle">From Grounding to Planning: Benchmarking Bottlenecks in Web Agents with Mind2Web</div>
+    <div class="authors">Segev Shlomov, Ben Wiesel, Aviad Sela, Ido Levy, <strong>Liane Galanti</strong>, Roy Abitbol</div>
+    <div class="venue">Preprint 2024</div>
+    <div class="links">
+      <a href="https://arxiv.org/abs/2409.01927">paper</a>
     </div>
-  </section>
+    <div class="abstract">
+      Using the Mind2Web benchmark, we isolate whether grounding or planning better predicts agent performance on natural language task execution.
+    </div>
+  </div>
 
 </body>
 </html>
