@@ -42,8 +42,8 @@
     }
 
     .portrait {
-      width: 220px;
-      height: 220px;
+      width: 180px;
+      height: 180px;
       border-radius: 50%;
       object-fit: cover;
       margin-left: auto;
@@ -102,17 +102,12 @@
     }
 
     .toggle-abstract {
-      font-family: 'Roboto', sans-serif;
-      font-size: 0.9em;
-      letter-spacing: 0.02em;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-      color: #0645ad;
-      text-decoration: none;
-      margin-right: 0.8em;
-      cursor: pointer;
-    }
+    font-size: 0.9em;
+    color: #0645ad;
+    text-decoration: none;
+    margin-right: 0.8em;
+    cursor: pointer;
+  }
   </style>
 </head>
 <body>
@@ -145,7 +140,7 @@
     <div class="links">
       <a href="https://neurips.cc/virtual/2023/poster/72432">paper</a>
       <a href="https://github.com/Lianga2000/NormBasedBounds">code</a>
-      <a class="toggle-abstract" href="javascript:void(0)"><span>tl;dr</span></a>
+      <span class="toggle-abstract">TL;DR</span>
     </div>
     <div class="abstract">
       We derive tight generalization bounds for sparse neural networks and show how sparsity influences generalization. Our empirical results outperform prior bounds in the literature.
@@ -159,7 +154,7 @@
     <div class="links">
       <a href="https://openreview.net/pdf?id=162TqkUNPO">paper</a>
       <a href="https://github.com/Lianga2000/IntermediateNC">code</a>
-      <a class="toggle-abstract" href="javascript:void(0)"><span>tl;dr</span></a>
+      <span class="toggle-abstract">TL;DR</span>
     </div>
     <div class="abstract">
       We introduce "effective depth" to capture how neural collapse propagates backward in networks. We show that effective depth is unrelated to architectural depth and adapts to data complexity.
@@ -172,7 +167,7 @@
     <div class="venue">Preprint, 2024</div>
     <div class="links">
       <a href="https://arxiv.org/pdf/2407.18968">paper</a>
-      <a class="toggle-abstract" href="javascript:void(0)"><span>tl;dr</span></a>
+      <span class="toggle-abstract">TL;DR</span>
     </div>
     <div class="abstract">
       We evaluate the ability of LLMs to perform abstract reasoning beyond language, using the ARC benchmark and diverse prompting strategies.
@@ -185,7 +180,7 @@
     <div class="venue">ECAI, 2025</div>
     <div class="links">
       <a href="https://arxiv.org/abs/2409.01927">paper</a>
-      <a class="toggle-abstract" href="javascript:void(0)"><span>tl;dr</span></a>
+      <span class="toggle-abstract">TL;DR</span>
     </div>
     <div class="abstract">
       Using the Mind2Web benchmark, we isolate whether grounding or planning better predicts agent performance on natural language task execution.
@@ -199,7 +194,7 @@
     canvas.height = canvas.offsetHeight;
 
     let x = 0.01, y = 0, z = 0;
-    const dt = 0.003; // slower
+    const dt = 0.01;
     const a = 10, b = 28, c = 8 / 3;
     const points = [];
 
@@ -208,7 +203,7 @@
     }
 
     function draw() {
-      for (let i = 0; i < 1; i++) {
+      for (let i = 0; i < 3; i++) {
         let dx = a * (y - x) * dt;
         let dy = (x * (b - z) - y) * dt;
         let dz = (x * y - c * z) * dt;
@@ -227,7 +222,7 @@
 
         const hueShift = Date.now() * 0.02;
         ctx.strokeStyle = `hsl(${(i * 0.3 + hueShift) % 360}, 80%, 50%)`;
-        ctx.lineWidth = 0.4; // thinner lines
+        ctx.lineWidth = 0.8;
         ctx.lineTo(xPos, yPos);
       }
       ctx.stroke();
@@ -235,13 +230,14 @@
     }
     draw();
 
-    document.querySelectorAll('.toggle-abstract').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const abstract = btn.closest('.paper').querySelector('.abstract');
-        const isVisible = abstract.style.display === 'block';
-        abstract.style.display = isVisible ? 'none' : 'block';
-      });
+  document.querySelectorAll('.toggle-abstract').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const abstract = btn.closest('.paper').querySelector('.abstract');
+      const isVisible = abstract.style.display === 'block';
+      abstract.style.display = isVisible ? 'none' : 'block';
     });
+  });
+
   </script>
 </body>
 </html>
