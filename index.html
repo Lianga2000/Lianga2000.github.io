@@ -1,278 +1,189 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Liane Galanti</title>
-  <meta name="author" content="Liane Galanti">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- Minimal inline CSS for convenience -->
+  <meta name="author" content="Liane Galanti">
+  <title>Liane Galanti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    /* Base styles */
     body {
       margin: 0;
-      padding: 0;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      color: #333;
-      background-color: #fff;
-      line-height: 1.6;
+      font-family: 'Inter', sans-serif;
+      background-color: #fafafa;
+      color: #222;
     }
 
-    /* Make sure the main table is centered */
-    table {
-      margin-left: auto;
-      margin-right: auto;
-      border-spacing: 0;
-      border-collapse: separate;
+    header {
+      background-color: #111;
+      color: #fff;
+      padding: 3rem 2rem 2rem;
+      text-align: center;
     }
 
-    /* Headings for your name/publications/talks */
-    name {
-      font-size: 1.8em;
-      font-weight: bold;
+    header h1 {
+      font-size: 2.5rem;
+      margin: 0;
     }
 
-    heading {
-      font-size: 1.2em;
-      font-weight: bold;
-      text-transform: uppercase;
-      border-bottom: 1px solid #ddd;
-      display: inline-block;
-      margin-bottom: 0.5em;
+    header p {
+      font-size: 1.1rem;
+      margin-top: 0.5rem;
     }
 
-    /* Paper title styling */
-    papertitle {
-      font-weight: bold;
-      font-size: 1em;
+    .profile-container {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
     }
 
-    /* Link colors in blue */
-    a {
-      color: #0066cc; /* nice blue color */
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-
-    /* Profile picture round corners */
-    .profile-pic {
-      width: 130%;
-      border-radius: 60%;
-      display: block; /* ensure it's block-level */
-      margin: 0 auto; /* center the image in its cell */
-    }
-
-
-    /* Publication images */
-    .pub-image {
+    .profile-container img {
       width: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .bio {
+      max-width: 700px;
+      text-align: center;
+    }
+
+    .bio p {
+      line-height: 1.7;
+    }
+
+    .links {
+      margin-top: 1rem;
+    }
+
+    .links a {
+      color: #0077cc;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 2rem;
+    }
+
+    .section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #eee;
+      padding-bottom: 0.5rem;
+    }
+
+    .paper {
+      display: flex;
+      flex-direction: row;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .paper img {
+      width: 160px;
+      height: auto;
       border-radius: 8px;
     }
 
-    /* Some spacing and alignment */
-    td {
-      vertical-align: top;
+    .paper-content {
+      flex: 1;
     }
 
-    .bio-cell {
-      width: 70%;
-      padding: 2.5%;
-    }
-    .photo-cell {
-      width: 40%;
-      padding: 2.5%;
-      text-align: center;
+    .paper-content h3 {
+      margin: 0;
+      font-size: 1.1rem;
     }
 
-    /* Footer credit */
-    .footer-credit {
-      font-size: small;
+    .paper-content p {
+      margin: 0.5rem 0;
+    }
+
+    footer {
       text-align: center;
-      margin-top: 2em;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .paper {
+        flex-direction: column;
+        align-items: center;
+      }
     }
   </style>
 </head>
-
 <body>
-  <!-- Main container table -->
-  <table style="width:100%; max-width:800px;">
-    <!-- Row for Bio & Photo -->
-    <tr>
-      <!-- Bio cell -->
-      <td class="bio-cell">
-        <p style="text-align:center;">
-          <name>Liane Galanti</name>
-        </p>
-        
-        <!-- Brief bio/description -->
-        <p>
-          Hello! I am a Research Scientist at IBM Research. I received my M.Sc. in Computer Science from Tel Aviv University, where I worked with Professor Lior Wolf. 
-          I am interested in questions related to large-scale models such as: universal representations, inductive biases, emergent capabilities of large models, adaptive learning, compressing neural networks, scaling laws, and data debiasing.
-        </p>
-      <!-- 
-          <li> <strong>What representations are learned in neural networks?</strong>: Why are these representations effective, and how do they influence downstream tasks?</li>
-          <li> <strong>What biases emerge in neural networks</strong>: Such as neural collapse or simplicity bias, and how these implicit tendencies shape model behavior and limitations.</li>
-          <li> <strong>What are the emergent capabilities of foundation models</strong>: How do these capabilities arise, and what governs their generalization and adaptability?</li>
-          <li> <strong>Understanding trade-offs in deep learning</strong>: How can we optimize efficiency, transferability, and robustness in model design?</li>
-          <li> <strong>The influence of architecture and training methods</strong>: How do these factors shape a model’s ability to generalize and adapt to new challenges?</li>
-        </ul> -->
-        <!-- <ul>
-          <li> <strong>What representations are learned in neural networks?</strong> -->
-            <!-- : Why are these representations effective, and how do they influence downstream tasks?</li> -->
-          <!-- <li> <strong>What inductive biases emerge in neural networks?</strong></li>
-          <li> <strong>What are the emergent capabilities of foundation models, and how do they arise?</strong></li>
-        </ul> -->
-        
-        
-        <p>
-          <strong>Interested in collaborations? Please reach out &#x1F601; &#129719;</strong>
-        </p>
+  <header>
+    <h1>Liane Galanti</h1>
+    <p>Research Scientist @ IBM | AI, Neural Networks, Learning Theory</p>
+  </header>
 
-        <!-- Links (Email, CV, GitHub, LinkedIn, Scholar, etc.) -->
-        <p style="text-align:center;">
-          <a href="mailto:lianegalanti@mail.tau.ac.il">Email</a> &nbsp;|&nbsp;
-          <!-- <a href="path/to/your-cv.pdf" target="_blank">CV</a> &nbsp;|&nbsp; -->
-          <a href="https://github.com/Lianga2000" target="_blank">GitHub</a> &nbsp;|&nbsp;
-          <a href="https://www.linkedin.com/in/liane-galanti-31879923a/" target="_blank">LinkedIn</a> &nbsp;|&nbsp;
-          <a href="https://scholar.google.com/citations?user=8jDgDJIAAAAJ&hl=en" target="_blank">Google Scholar</a>
-        </p>
-      </td>
+  <section class="profile-container">
+    <div class="bio">
+      <p>Hello! I'm a Research Scientist at IBM Research. I received my M.Sc. in Computer Science from Tel Aviv University, where I worked with Professor Lior Wolf.</p>
+      <p>I'm interested in universal representations, inductive biases, emergent capabilities, adaptive learning, scaling laws, neural compression, and debiasing methods.</p>
+      <p><strong>Interested in collaborations? Reach out :) ✨</strong></p>
+      <div class="links">
+        <a href="mailto:lianegalanti@mail.tau.ac.il">Email</a>
+        <a href="https://github.com/Lianga2000" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/liane-galanti-31879923a/" target="_blank">LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=8jDgDJIAAAAJ&hl=en" target="_blank">Scholar</a>
+      </div>
+    </div>
+    <img src="images/Liane.png" alt="Liane Galanti">
+  </section>
 
-      <!-- Profile photo cell -->
-      <td class="photo-cell">
-        <img src="images/Liane.png" alt="Profile Photo" class="profile-pic">
-      </td>
-    </tr>
-  </table>
+  <section class="section">
+    <h2>Selected Papers</h2>
 
-  <!-- Publications heading -->
-  <table style="width:100%; max-width:800px;" cellpadding="24">
-    <tr>
-      <td>
-        <heading>Selected Papers</heading>
-      </td>
-    </tr>
-  </table>
+    <div class="paper">
+      <img src="images/pub1.png" alt="Publication 1">
+      <div class="paper-content">
+        <h3><a href="https://neurips.cc/virtual/2023/poster/72432" target="_blank">Norm-based Generalization Bounds for Sparse Neural Networks</a></h3>
+        <p><strong>NeurIPS 2023</strong> — Tomer Galanti, Mengjia Xu, <strong>Liane Galanti</strong>, Tomaso Poggio</p>
+        <p>We derived tight generalization bounds for sparse neural networks and showed how sparsity affects generalization, outperforming previous bounds empirically.</p>
+        <p><a href="https://neurips.cc/virtual/2023/poster/72432">Paper</a> | <a href="https://github.com/Lianga2000/NormBasedBounds">Code</a></p>
+      </div>
+    </div>
 
-  <!-- Publications list table -->
-  <table style="width:100%; max-width:800px;">
-    <!-- Publication #1 -->
-    <tr>
-      <td style="padding:2.5%; width:25%;">
-        <img src="images/pub1.png" alt="Publication 1" class="pub-image">
-      </td>
-      <td style="padding:2.5%; width:75%;">
-        <a href="https://neurips.cc/virtual/2023/poster/72432" target="_blank">
-          <papertitle>Norm-based Generalization Bounds for Sparse Neural Networks</papertitle>
-        </a><br>
-        Tomer Galanti, Mengjia Xu, <strong>Liane Galanti</strong>, Tomaso Poggio<br>
-        <em> NeurIPS (2023).</em><br>
-        <a href="https://neurips.cc/virtual/2023/poster/72432">paper</a> /
-        <a href="https://github.com/Lianga2000/NormBasedBounds">code</a>
-        <!-- <a href="https://github.com/Lianga2000/NormBasedBounds">project page</a> -->
-        <p>
-          Derived relatively tight generalization bounds for sparse neural networks (e.g., convolutional networks) —
-          shedding light on the pivotal influence of the network’s sparsity on its ability to generalize. We empirically showed that our bound is significantly tighter than alternative generalization bounds for convolutional network from the literature.
-        </p>
-      </td>
-    </tr>
+    <div class="paper">
+      <img src="images/pub2.png" alt="Publication 2">
+      <div class="paper-content">
+        <h3><a href="https://openreview.net/pdf?id=162TqkUNPO" target="_blank">Comparative Generalization Bounds for Deep Neural Networks</a></h3>
+        <p><strong>TMLR 2023</strong> — Tomer Galanti, <strong>Liane Galanti</strong>, Ido Ben-Shaul</p>
+        <p>We introduced the notion of "effective depth" to explain propagation of Neural Collapse across layers, showing its independence from architecture depth.</p>
+        <p><a href="https://openreview.net/pdf?id=162TqkUNPO">Paper</a> | <a href="https://github.com/Lianga2000/IntermediateNC">Code</a></p>
+      </div>
+    </div>
 
-    <!-- Publication #2 -->
-    <tr>
-      <td style="padding:2.5%; width:25%;">
-        <img src="images/pub2.png" alt="Publication 2" class="pub-image">
-      </td>
-      <td style="padding:2.5%; width:75%;">
-        <a href="https://openreview.net/pdf?id=162TqkUNPO">
-          <papertitle> Comparative Generalization Bounds for Deep Neural Networks</papertitle>
-        </a><br>
-        Tomer Galanti, <strong>Liane Galanti</strong>, Ido Ben-Shaul<br>
-        <em>TMLR (2023).</em><br>
-        <a href="https://openreview.net/pdf?id=162TqkUNPO">paper</a> /
-        <a href="https://github.com/Lianga2000/IntermediateNC">code</a>
-        <!-- <a href="https://github.com/Lianga2000/IntermediateNC">project page</a> -->
-        <p>
-          Observed that neural networks trained for classification exhibit a property in which Neural Collapse propagates
-          backward from the penultimate layer to several preceding layers. We introduced the notion of “effective depth,” which captures the number of bottom layers in a network that do not experience neural collapse. We empirically demonstrated that a model’s effective depth is independent of its actual depth and adapts to the complexity of the data.
-        </p>
-      </td>
-    </tr>
+    <div class="paper">
+      <img src="images/pub3.png" alt="Publication 3">
+      <div class="paper-content">
+        <h3><a href="https://arxiv.org/pdf/2407.18968" target="_blank">Intelligence Analysis of Language Models</a></h3>
+        <p><strong>Preprint 2024</strong> — <strong>Liane Galanti</strong>, Ethan Baron</p>
+        <p>We evaluated LLMs on ARC and highlighted their limitations in abstract reasoning beyond language through diverse prompt strategies.</p>
+        <p><a href="https://arxiv.org/pdf/2407.18968">Paper</a></p>
+      </div>
+    </div>
 
-        <!-- Publication #3 -->
-        <tr>
-          <td style="padding:2.5%; width:25%;">
-            <img src="images/pub3.png" alt="Publication 3" class="pub-image">
-          </td>
-          <td style="padding:2.5%; width:75%;">
-            <a href="https://arxiv.org/pdf/2407.18968">
-              <papertitle> Intelligence Analysis of Language Models</papertitle>
-            </a><br>
-            <strong>Liane Galanti</strong>, Ethan Baron<br>
-            <em>Preprint (2024).</em><br>
-            <a href="https://arxiv.org/pdf/2407.18968">paper</a> 
-            <!-- <a href="https://github.com/Lianga2000/IntermediateNC">code</a> /
-            <a href="https://github.com/Lianga2000/IntermediateNC">project page</a> -->
-            <p>
-              This study underscores the real-world challenges of LLMs in complex reasoning tasks. We tested a wide range
-              of LLMs on the ARC benchmark, employing diverse prompting techniques, demonstrating the limitations of
-              LLMs in abstract reasoning within non-linguistic domains.
-            </p>
-          </td>
-        </tr>
+    <div class="paper">
+      <img src="images/pub4.webp" alt="Publication 4">
+      <div class="paper-content">
+        <h3><a href="https://arxiv.org/abs/2409.01927" target="_blank">From Grounding to Planning: Benchmarking Bottlenecks in Web Agents with Mind2Web</a></h3>
+        <p><strong>Preprint 2024</strong> — Segev Shlomov, Ben Wiesel, Aviad Sela, Ido Levy, <strong>Liane Galanti</strong>, Roy Abitbol</p>
+        <p>We analyzed whether grounding or planning is more essential for natural language-driven web agents using the Mind2Web benchmark.</p>
+        <p><a href="https://arxiv.org/abs/2409.01927">Paper</a></p>
+      </div>
+    </div>
+  </section>
 
-    <!-- Publication #4 -->
-    <tr>
-      <td style="padding:2.5%; width:25%;">
-        <img src="images/pub4.webp" alt="Publication 4" class="pub-image">
-      </td>
-      <td style="padding:2.5%; width:75%;">
-        <a href="https://arxiv.org/abs/2409.01927">
-          <papertitle> From Grounding to Planning: Benchmarking Bottlenecks in Web Agents with Mind2Web</papertitle>
-        </a><br>
-        Segev Shlomov, Ben wiesel, Aviad Sela, Ido Levy, <strong>Liane Galanti</strong>, Roy Abitbol<br>
-        <em>Preprint (2024).</em><br>
-        <a href="https://arxiv.org/abs/2409.01927">paper</a> 
-        <!-- <a href="https://github.com/Lianga2000/IntermediateNC">code</a> /
-        <a href="https://github.com/Lianga2000/IntermediateNC">project page</a> -->
-        <p>
-          We explored whether action planning or element grounding capabilities are more crucial for executing
-          action-based tasks from natural language queries (e.g., booking a flight, searching for content on Google).
-          Using the Mind2Web benchmark, we tested various agents, isolating and assessing the contributions of
-          planning and grounding capabilities to performance.
-        </p>
-      </td>
-    </tr>
-
-
-
-
-
-    <!-- Add more rows as needed -->
-  </table>
-
-  <!-- Optional Talks Section -->
-  <!-- <table style="width:100%; max-width:800px;" cellpadding="24">
-    <tr>
-      <td>
-        <heading>Talks</heading>
-      </td>
-    </tr>
-  </table>
-  <table style="width:100%; max-width:800px;">
-    <tr>
-      <td style="padding:2.5%;">
-        <a href="#"><em>Talk Title #1</em></a>, Conference or Institution, 202X.<br><br>
-        <a href="#"><em>Talk Title #2</em></a>, Another Venue, 202X.
-      </td>
-    </tr>
-  </table> -->
-
-  <!-- Footer / Credit -->
-  <!-- <p class="footer-credit">
-    Page design inspired by <a href="https://jonbarron.info/">Jon Barron</a> &amp;
-    <a href="https://sagiebenaim.github.io/">Sagie Benaim</a>. Customize freely!
-  </p>
 </body>
-</html> -->
+</html>
