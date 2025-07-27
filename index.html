@@ -229,12 +229,14 @@
     }
     draw();
 
-    document.querySelectorAll('.toggle-abstract').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const abstract = btn.parentElement.nextElementSibling;
-        abstract.style.display = abstract.style.display === 'none' ? 'block' : 'none';
-      });
+  document.querySelectorAll('.toggle-abstract').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const abstract = btn.closest('.paper').querySelector('.abstract');
+      const isVisible = abstract.style.display === 'block';
+      abstract.style.display = isVisible ? 'none' : 'block';
     });
+  });
+
   </script>
 </body>
 </html>
