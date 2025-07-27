@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="author" content="Liane Galanti">
   <title>Liane Galanti</title>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro&family=Inter:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
   <style>
     body {
       font-family: 'Roboto', sans-serif;
@@ -16,41 +16,37 @@
       line-height: 1.6;
     }
 
-    .header-container {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 2em;
-    }
-
-    .info-block {
-      flex: 1;
-    }
-
-    .name-and-canvas {
-      display: flex;
-      align-items: center;
-      gap: 1em;
-    }
-
-    .name-and-canvas h1 {
+    h1 {
       font-family: 'Source Serif Pro', serif;
       font-size: 2.2em;
       font-weight: normal;
       margin: 0;
     }
 
-    #lorenzCanvas {
-      width: 180px;
-      height: 80px;
-      background: transparent;
+    .header-container {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5em;
+    }
+
+    .chaos-canvas {
+      width: 120px;
+      height: 120px;
+      margin-right: 1em;
+      flex-shrink: 0;
+    }
+
+    .info-block {
+      display: flex;
+      flex-direction: column;
     }
 
     .portrait {
-      width: 180px;
-      height: 180px;
+      width: 140px;
+      height: 140px;
       border-radius: 50%;
       object-fit: cover;
+      margin-left: auto;
     }
 
     .contact {
@@ -107,11 +103,9 @@
 </head>
 <body>
   <div class="header-container">
+    <canvas id="lorenzCanvas" class="chaos-canvas"></canvas>
     <div class="info-block">
-      <div class="name-and-canvas">
-        <canvas id="lorenzCanvas"></canvas>
-        <h1>Liane Galanti</h1>
-      </div>
+      <h1>Liane Galanti</h1>
     </div>
     <img src="images/Liane.png" alt="Liane Galanti" class="portrait">
   </div>
@@ -183,45 +177,42 @@
   <script>
     const canvas = document.getElementById('lorenzCanvas');
     const ctx = canvas.getContext('2d');
-    canvas.width = 180;
-    canvas.height = 80;
+    canvas.width = canvas.offsetWidth;
+    canvas.height = canvas.offsetHeight;
 
-    let x = 0.1, y = 0, z = 0;
-    const dt = 0.008;
-    const sigma = 10, rho = 28, beta = 8 / 3;
+    let x = 0.01, y = 0, z = 0;
+    const dt = 0.01;
+    const a = 10, b = 28, c = 8 / 3;
     const points = [];
+
+    function map(val, in_min, in_max, out_min, out_max) {
+      return (val - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    }
 
     function draw() {
       for (let i = 0; i < 5; i++) {
-        const dx = sigma * (y - x);
-        const dy = x * (rho - z) - y;
-        const dz = x * y - beta * z;
-        x += dx * dt;
-        y += dy * dt;
-        z += dz * dt;
-
-        const scale = 5;
-        const cx = canvas.width / 2 + x * scale;
-        const cy = canvas.height / 2 + z * scale;
-        points.push({ x: cx, y: cy });
-        if (points.length > 600) points.shift();
+        let dx = a * (y - x) * dt;
+        let dy = (x * (b - z) - y) * dt;
+        let dz = (x * y - c * z) * dt;
+        x += dx;
+        y += dy;
+        z += dz;
+        points.push([x, y, z]);
+        if (points.length > 1000) points.shift();
       }
-
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       ctx.beginPath();
       for (let i = 0; i < points.length; i++) {
-        const p = points[i];
-        const opacity = i / points.length;
-        ctx.strokeStyle = `rgba(30, 100, 200, ${opacity})`;
+        const [px, py, pz] = points[i];
+        const xPos = map(px, -20, 20, 0, canvas.width);
+        const yPos = map(pz, 0, 50, canvas.height, 0);
+        ctx.strokeStyle = `hsl(${(i * 0.5) % 360}, 100%, 45%)`;
         ctx.lineWidth = 1;
-        if (i === 0) ctx.moveTo(p.x, p.y);
-        else ctx.lineTo(p.x, p.y);
+        ctx.lineTo(xPos, yPos);
       }
       ctx.stroke();
-
       requestAnimationFrame(draw);
     }
-
     draw();
   </script>
 </body>
