@@ -16,13 +16,6 @@
       line-height: 1.6;
     }
 
-    h1 {
-      font-family: 'Source Serif Pro', serif;
-      font-size: 2.2em;
-      font-weight: normal;
-      margin-bottom: 0.2em;
-    }
-
     .header-container {
       display: flex;
       justify-content: space-between;
@@ -32,9 +25,25 @@
 
     .info-block {
       flex: 1;
+    }
+
+    .name-and-canvas {
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      align-items: center;
+      gap: 1em;
+    }
+
+    .name-and-canvas h1 {
+      font-family: 'Source Serif Pro', serif;
+      font-size: 2.2em;
+      font-weight: normal;
+      margin: 0;
+    }
+
+    #lorenzCanvas {
+      width: 180px;
+      height: 80px;
+      background: transparent;
     }
 
     .portrait {
@@ -42,14 +51,6 @@
       height: 180px;
       border-radius: 50%;
       object-fit: cover;
-    }
-
-    #lorenzCanvas {
-      width: 200px;
-      height: 100px;
-      display: block;
-      background: transparent;
-      margin-top: -10px;
     }
 
     .contact {
@@ -107,8 +108,10 @@
 <body>
   <div class="header-container">
     <div class="info-block">
-      <h1>Liane Galanti</h1>
-      <canvas id="lorenzCanvas"></canvas>
+      <div class="name-and-canvas">
+        <h1>Liane Galanti</h1>
+        <canvas id="lorenzCanvas"></canvas>
+      </div>
     </div>
     <img src="images/Liane.png" alt="Liane Galanti" class="portrait">
   </div>
@@ -177,54 +180,49 @@
     </div>
   </div>
 
-<script>
-  const canvas = document.getElementById('lorenzCanvas');
-  const ctx = canvas.getContext('2d');
+  <script>
+    const canvas = document.getElementById('lorenzCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = 180;
+    canvas.height = 80;
 
-  // Set fixed size to ensure clarity and animation stability
-  const width = canvas.width = 200;
-  const height = canvas.height = 100;
+    let x = 0.1, y = 0, z = 0;
+    const dt = 0.008;
+    const sigma = 10, rho = 28, beta = 8 / 3;
+    const points = [];
 
-  let x = 0.1, y = 0, z = 0;
-  const dt = 0.008;
-  const sigma = 10, rho = 28, beta = 8 / 3;
+    function draw() {
+      for (let i = 0; i < 5; i++) {
+        const dx = sigma * (y - x);
+        const dy = x * (rho - z) - y;
+        const dz = x * y - beta * z;
+        x += dx * dt;
+        y += dy * dt;
+        z += dz * dt;
 
-  const points = [];
+        const scale = 5;
+        const cx = canvas.width / 2 + x * scale;
+        const cy = canvas.height / 2 + z * scale;
+        points.push({ x: cx, y: cy });
+        if (points.length > 600) points.shift();
+      }
 
-  function draw() {
-    // Simulate several steps per frame
-    for (let i = 0; i < 5; i++) {
-      const dx = sigma * (y - x);
-      const dy = x * (rho - z) - y;
-      const dz = x * y - beta * z;
-      x += dx * dt;
-      y += dy * dt;
-      z += dz * dt;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.beginPath();
+      for (let i = 0; i < points.length; i++) {
+        const p = points[i];
+        const opacity = i / points.length;
+        ctx.strokeStyle = `rgba(30, 100, 200, ${opacity})`;
+        ctx.lineWidth = 1;
+        if (i === 0) ctx.moveTo(p.x, p.y);
+        else ctx.lineTo(p.x, p.y);
+      }
+      ctx.stroke();
 
-      const scale = 5;
-      const cx = width / 2 + x * scale;
-      const cy = height / 2 + z * scale;
-      points.push({ x: cx, y: cy });
-      if (points.length > 600) points.shift();
+      requestAnimationFrame(draw);
     }
 
-    ctx.clearRect(0, 0, width, height);
-    ctx.beginPath();
-    for (let i = 0; i < points.length; i++) {
-      const p = points[i];
-      const opacity = i / points.length;
-      ctx.strokeStyle = `rgba(30, 100, 200, ${opacity})`; // soft blue
-      ctx.lineWidth = 1;
-      if (i === 0) ctx.moveTo(p.x, p.y);
-      else ctx.lineTo(p.x, p.y);
-    }
-    ctx.stroke();
-
-    requestAnimationFrame(draw);
-  }
-
-  draw();
-</script>
-
+    draw();
+  </script>
 </body>
 </html>
