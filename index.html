@@ -211,7 +211,7 @@
         const hueShift = Date.now() * 0.02;  // changes with time
         ctx.strokeStyle = `hsl(${(i * 0.3 + hueShift) % 360}, 80%, 50%)`;
 
-        ctx.lineWidth = 1;
+        ctx.lineWidth = 0.5;
         ctx.lineTo(xPos, yPos);
       }
       ctx.stroke();
