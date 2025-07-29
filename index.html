@@ -233,7 +233,7 @@
     // draw background circle
     const cx = canvas.width  / 2;
     const cy = canvas.height / 2;
-    const radius = Math.min(cx, cy) - 5;
+    const radius = Math.min(cx, cy);
     ctx.beginPath();
     ctx.arc(cx, cy, radius, 0, 2 * Math.PI);
     ctx.fillStyle = 'rgba(0,0,0,1)';  // tweak color & alpha
