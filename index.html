@@ -218,34 +218,24 @@
 
   function draw() {
     // integrate a few steps
-    for (let i = 0; i < 3; i++) {
-      const dx = a * (y - x) * dt;
-      const dy = (x * (b - z) - y) * dt;
-      const dz = (x * y - c * z) * dt;
-      x += dx; y += dy; z += dz;
-      points.push([x, y, z]);
-      if (points.length > 1000) points.shift();
-    }
+    // for (let i = 0; i < 3; i++) {
+    //   const dx = a * (y - x) * dt;
+    //   const dy = (x * (b - z) - y) * dt;
+    //   const dz = (x * y - c * z) * dt;
+    //   x += dx; y += dy; z += dz;
+    //   points.push([x, y, z]);
+    //   if (points.length > 1000) points.shift();
+    // }
 
     // clear
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // draw background circle
-    // const cx = canvas.width  / 2;
-    // const cy = canvas.height / 2;
-    // const radius = Math.min(cx, cy);
-    // ctx.beginPath();
-    // ctx.arc(cx, cy, radius, 0, 2 * Math.PI);
-    // ctx.fillStyle = 'rgba(0,0,0,1)';  // tweak color & alpha
-    // ctx.fill();
-
-    // draw Lorenz path
     ctx.beginPath();
     for (let i = 0; i < points.length; i++) {
       const [px, py, pz] = points[i];
       const xPos = map(px, -20, 20, 10, canvas.width  - 10);
       const yPos = map(pz,   0, 50, canvas.height - 10, 10);
-      ctx.strokeStyle = `hsl(${(i * 0.3 + Date.now()*0.0002) % 360},80%,50%)`;
+      ctx.strokeStyle = `hsl(${(i * 0.3 + Date.now()*0.01) % 360},80%,50%)`;
       ctx.lineWidth = 0.8;
       if (i === 0) ctx.moveTo(xPos, yPos);
       else         ctx.lineTo(xPos, yPos);
