@@ -245,7 +245,10 @@
       const [px, py, pz] = points[i];
       const xPos = map(px, -20, 20, 10, canvas.width  - 10);
       const yPos = map(pz,   0, 50, canvas.height - 10, 10);
-      ctx.strokeStyle = `hsl(${220 + (i * 0.3 + Date.now() * 0.01) % 80}, 80%, 50%)`;
+      const hue = 220 + (i * 0.3 + Date.now() * 0.01) % 80;
+      const lightness = 45 + 10 * Math.sin(i * 0.05); // oscillates between 35% and 55%
+      ctx.strokeStyle = `hsl(${hue}, 80%, ${lightness}%)`;
+
 
       ctx.lineWidth = 0.8;
       if (i === 0) ctx.moveTo(xPos, yPos);
