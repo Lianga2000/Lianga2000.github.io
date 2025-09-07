@@ -233,13 +233,17 @@ a:hover {
 
 
 
-  <script>
+<script>
   // Lorenz attractor drawing
   const canvas = document.getElementById('lorenzCanvas');
   const ctx = canvas.getContext('2d');
-  canvas.width = canvas.clientWidth;
-  canvas.height = canvas.clientHeight;
 
+  function resizeCanvas() {
+    canvas.width = canvas.clientWidth;
+    canvas.height = canvas.clientHeight;
+  }
+  resizeCanvas();
+  window.addEventListener('resize', resizeCanvas);
 
   let x = 0.01, y = 0, z = 0;
   const dt = 0.01;
@@ -247,7 +251,7 @@ a:hover {
   const points = [];
 
   function map(val, in_min, in_max, out_min, out_max) {
-    return (val - in_min) * (out_max - in_min) / (in_max - in_min) + out_min;
+    return (val - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
   }
 
   function draw() {
@@ -296,6 +300,7 @@ a:hover {
     });
   });
 </script>
+
 
 
   <footer style="margin-top: 3em; text-align: center; font-size: 0.6em; color: #666;">
