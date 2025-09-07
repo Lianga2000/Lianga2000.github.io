@@ -237,8 +237,9 @@ a:hover {
   // Lorenz attractor drawing
   const canvas = document.getElementById('lorenzCanvas');
   const ctx = canvas.getContext('2d');
-  canvas.width = canvas.offsetWidth;
-  canvas.height = canvas.offsetHeight;
+  canvas.width = canvas.clientWidth;
+  canvas.height = canvas.clientHeight;
+
 
   let x = 0.01, y = 0, z = 0;
   const dt = 0.01;
