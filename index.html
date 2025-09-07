@@ -234,6 +234,7 @@ a:hover {
 
 
   <script>
+  // Lorenz attractor drawing
   const canvas = document.getElementById('lorenzCanvas');
   const ctx = canvas.getContext('2d');
   canvas.width = canvas.offsetWidth;
@@ -245,7 +246,7 @@ a:hover {
   const points = [];
 
   function map(val, in_min, in_max, out_min, out_max) {
-    return (val - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+    return (val - in_min) * (out_max - in_min) / (in_max - in_min) + out_min;
   }
 
   function draw() {
@@ -265,12 +266,12 @@ a:hover {
     ctx.beginPath();
     for (let i = 0; i < points.length; i++) {
       const [px, py, pz] = points[i];
-      const xPos = map(px, -20, 20, 10, canvas.width  - 10);
-      const yPos = map(pz,   0, 50, canvas.height - 10, 10);
-      ctx.strokeStyle = `hsl(${(i * 0.3 + Date.now()*0.02) % 360},80%,50%)`;
+      const xPos = map(px, -20, 20, 10, canvas.width - 10);
+      const yPos = map(pz, 0, 50, canvas.height - 10, 10);
+      ctx.strokeStyle = `hsl(${(i * 0.3 + Date.now() * 0.02) % 360}, 80%, 50%)`;
       ctx.lineWidth = 0.8;
       if (i === 0) ctx.moveTo(xPos, yPos);
-      else         ctx.lineTo(xPos, yPos);
+      else ctx.lineTo(xPos, yPos);
     }
     ctx.stroke();
 
@@ -279,8 +280,22 @@ a:hover {
 
   draw();
 
-  // your toggle-abstract logic unchanged...
+  // tl;dr toggle logic
+  document.querySelectorAll('.toggle-abstract').forEach(link => {
+    link.addEventListener('click', function (event) {
+      event.preventDefault(); // stop jumping to top
+      const abstract = this.parentElement.nextElementSibling;
+      if (abstract.style.display === "none" || abstract.style.display === "") {
+        abstract.style.display = "block";
+        this.textContent = "hide";
+      } else {
+        abstract.style.display = "none";
+        this.textContent = "tl;dr";
+      }
+    });
+  });
 </script>
+
 
   <footer style="margin-top: 3em; text-align: center; font-size: 0.6em; color: #666;">
     © Copyright 2025 Liane Galanti.
